@@ -12,6 +12,9 @@ mongoose.connect(mongoUri, {
 mongoose.connection.on('connected', () => {
   console.log('Connected to mongo instance')
 })
+mongoose.connection.on('error', err => {
+  console.error('Error connecting to mong', err)
+})
 
 app.get('/', (req, res) => {
   res.send('Hi there!')

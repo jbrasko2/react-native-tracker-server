@@ -9,7 +9,7 @@ const requireAuth = require('./middlewares/requireAuth')
 
 const app = express()
 
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(authRoutes)
 app.use(trackRoutes)
 
